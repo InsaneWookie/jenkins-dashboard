@@ -1,0 +1,30 @@
+
+@import url(https://fonts.googleapis.com/css?family=Mountains+of+Christmas);
+
+body {
+    font-family: 'Mountains of Christmas', serif;
+    background-image: url(http://www.afaithtoliveby.com/wp-content/uploads/2010/12/christmas-tree1.jpg);
+    background-size: cover;
+    font-weight: bold;
+}
+
+.label{
+    font-weight: bold;
+}
+
+.label-danger {
+    background-color: #941F1F;
+}
+
+.label-warning {
+    background-color: #E8C382;
+
+}
+
+.label-default {
+    background-color: #34502B;
+}
+
+.progress-bar {
+    background-color: #7B9971;
+}

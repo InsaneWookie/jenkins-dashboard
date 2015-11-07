@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Creepster);
+
+body {
+    color: #C71515 !important;
+    font-family: Creepster;
+    background: #030303;
+    background-image: url(../images/halloween-background.jpg);
+    background-size: 100%;
+}
+
+.label-danger {
+    background-color: #830C12;
+    #color: #C71515 !important;
+}
+
+.label-warning {
+    background-color: #FE9600;
+    #color: #C71515 !important;
+
+}
+
+.label-default {
+    background-color: #602749;
+    #color: #C71515 !important;
+}
+
+.progress-bar {
+    background-color: #C71515;
+}

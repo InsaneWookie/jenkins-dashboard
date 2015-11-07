@@ -1,0 +1,110 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+html, body, .container-fluid  {
+    height: 100%;
+}
+
+.label{
+    font-weight: normal;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.job, .progress {
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+    margin-bottom: 7px
+}
+
+.job-row {
+    display: block;
+    margin: 0 0 7px 0;
+    font-size: 3.0em;
+    padding: 0;
+    /*font-weight: normal;*/
+    text-align: left;
+}
+
+.job.label, .job.label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.background-image {
+    text-align: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center ;
+}
+
+.beer {
+    color: #F0A830;
+}
+
+.beer-background {
+    background: url(../images/beer-background.jpg) no-repeat center top;
+}
+
+.job-table td{
+    padding: .1em .2em;
+    width: 100%
+}
+
+.left{
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%
+}
+
+.right{
+    vertical-align: middle;
+}
+.right span {
+    font-size: 0.8em;
+}
+
+.clock{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 4em;
+    font-weight: bold;
+    padding: 0.1em;
+    text-shadow: 1px 1px 0 #FFF,
+    -1px 1px 0 #FFF,
+    1px -1px 0 #FFF,
+    -1px -1px 0 #FFF,
+    0px 1px 0 #FFF,
+    0px -1px 0 #FFF,
+    -1px 0px 0 #FFF,
+    1px 0px 0 #FFF,
+    2px 2px 0 #FFF,
+    -2px 2px 0 #FFF,
+    2px -2px 0 #FFF,
+    -2px -2px 0 #FFF,
+    0px 2px 0 #FFF,
+    0px -2px 0 #FFF,
+    -2px 0px 0 #FFF,
+    2px 0px 0 #FFF,
+    1px 2px 0 #FFF,
+    -1px 2px 0 #FFF,
+    1px -2px 0 #FFF,
+    -1px -2px 0 #FFF,
+    2px 1px 0 #FFF,
+    -2px 1px 0 #FFF,
+    2px -1px 0 #FFF,
+    -2px -1px 0 #FFF;
+
+}

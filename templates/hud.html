@@ -1,0 +1,81 @@
+<div class="background-image" ng-if="!showFailed && !showBuilding && !$root.isBeerBuilding"
+     style="background-image: url({{backgroundImage.url}});"></div>
+
+<div class="container-fluid">
+    <div ng-if="showBuilding" class="col-md-5" style="margin-top: 7px;">
+        <div>
+            <div ng-repeat="computer in building.computer">
+                <div ng-repeat="executor in computer.executors" class="computers">
+                    <div ng-if="!executor.idle">
+                        <div class="job job-row label label-default" style="margin: 0">
+                            <table class="job-table">
+                                <tr>
+                                    <td class="left"><i
+                                            ng-if="executor.currentExecutable.fullDisplayName.indexOf('Beer') != -1"
+                                            class="fa fa-beer beer"></i>
+                                        {{executor.currentExecutable.fullDisplayName}}
+                                    </td>
+                                    <td class="right"><span am-time-ago="executor.currentExecutable.timestamp"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar"
+                                 style="width: {{executor.progress}}%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <h1>Queued ({{queued.length}})</h1>
+            </div>
+            <div>
+                <div ng-repeat="job in queued" class="computers">
+                    <div class="job job-row label label-default">
+                        <table class="job-table">
+                            <tr>
+                                <td class="left"><i ng-if="job.task.name.indexOf('Beer') != -1"
+                                                    class="fa fa-beer beer"></i>
+                                    {{job.task.name}}
+                                </td>
+                                <td class="right"><span am-time-ago="job.inQueueSince"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- failed jobs -->
+    <div ng-class="{'col-md-7': showBuilding, 'col-md-12': !showBuilding}" ng-if="showFailed" style="margin-top: 7px;">
+        <div>
+            <div ng-repeat="job in failed track by job.name">
+                <div class="label job job-row"
+                     ng-class="{'label-warning': job.status == 'UNSTABLE', 'label-danger': job.status == 'FAILURE'}">
+                    <table class="job-table">
+                        <tr>
+                            <td class="left">{{job.displayName}}</td>
+                            <td class="right"><span am-time-ago="job.timestamp"></span></td>
+                        </tr>
+                        <tr ng-if="job.branchName">
+                            <td colspan="2" class="left" style="text-align: right; font-size:0.8em">&nbsp;{{job.branchName}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="background-image col-md-7" ng-if="!showFailed && showBuilding && !$root.isBeerBuilding"
+         style="background-image: url({{backgroundImage.url}});"></div>
+</div>
+
+
+<div class="clock">{{clock}}</div>
