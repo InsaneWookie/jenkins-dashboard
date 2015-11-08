@@ -123,63 +123,63 @@ angular.module('jenkinsDashboard', ['ngRoute', 'ngResource', 'firebase', 'ngSani
         cssChanger.start();
 
         //test data
-        $scope.building =
-            {
-                busyExecutors: 1,
-                displayName: "Executor 1",
-                computer: [
-                    {
-                        executors: [
-                            {
-                                idle: false,
-                                currentExecutable: {fullDisplayName: "Building job #24", timestamp: 1446938008288}, progress: 25
-                            },
-                            {
-                                idle: false,
-                                currentExecutable: {fullDisplayName: "Another job job #99", timestamp: 1446937500288}, progress: 75
-                            }
-                        ]
-                    }
-
-                ]
-            };
-
-        $scope.queued = [
-            {
-                task: {name: "queued job #645"},
-                queuedSince: 1446937500288
-            }
-        ];
-
-        updateShowBuilding();
-
-        $scope.showFailed = true;
-        $scope.failed = [
-            {
-                name: "failed job #23",
-                number: 23,
-                displayName: "failed job #23",
-                status: 'FAILURE',
-                culprits: [],
-                timestamp:  1446935500288
-            },
-            {
-                name: "failed job #123",
-                displayName: "failed job #123",
-                status: 'FAILURE',
-                culprits: [],
-                branchName: "test_branch",
-                timestamp: 1446932500288
-            },
-            {
-                name: "unstable job #321",
-                displayName: "unstable job #321",
-                status: 'UNSTABLE',
-                culprits: [],
-                branchName: "",
-                timestamp: 1446932500288
-            }
-        ];
+        //$scope.building =
+        //    {
+        //        busyExecutors: 1,
+        //        displayName: "Executor 1",
+        //        computer: [
+        //            {
+        //                executors: [
+        //                    {
+        //                        idle: false,
+        //                        currentExecutable: {fullDisplayName: "Building job #24", timestamp: 1446938008288}, progress: 25
+        //                    },
+        //                    {
+        //                        idle: false,
+        //                        currentExecutable: {fullDisplayName: "Another job job #99", timestamp: 1446937500288}, progress: 75
+        //                    }
+        //                ]
+        //            }
+        //
+        //        ]
+        //    };
+        //
+        //$scope.queued = [
+        //    {
+        //        task: {name: "queued job #645"},
+        //        queuedSince: 1446937500288
+        //    }
+        //];
+        //
+        //updateShowBuilding();
+        //
+        //$scope.showFailed = true;
+        //$scope.failed = [
+        //    {
+        //        name: "failed job #23",
+        //        number: 23,
+        //        displayName: "failed job #23",
+        //        status: 'FAILURE',
+        //        culprits: [],
+        //        timestamp:  1446935500288
+        //    },
+        //    {
+        //        name: "failed job #123",
+        //        displayName: "failed job #123",
+        //        status: 'FAILURE',
+        //        culprits: [],
+        //        branchName: "test_branch",
+        //        timestamp: 1446932500288
+        //    },
+        //    {
+        //        name: "unstable job #321",
+        //        displayName: "unstable job #321",
+        //        status: 'UNSTABLE',
+        //        culprits: [],
+        //        branchName: "",
+        //        timestamp: 1446932500288
+        //    }
+        //];
 
         function updateShowBuilding() {
             $scope.showBuilding = ($scope.building.busyExecutors > 0) || ($scope.queued.length > 0);
@@ -226,8 +226,8 @@ angular.module('jenkinsDashboard', ['ngRoute', 'ngResource', 'firebase', 'ngSani
             });
         }
 
-        //fetchData(); //initial fetch
-        //$interval(fetchData, appConfig.refreshInterval);
+        fetchData(); //initial fetch
+        $interval(fetchData, appConfig.refreshInterval);
 
         function updateClock() {
             $scope.clock = moment().format('Do MMM h:mma');
